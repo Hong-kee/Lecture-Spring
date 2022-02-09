@@ -25,6 +25,7 @@ public class Book {
         if (price >= 30000) this.discountPrice = price * 75 / 100;
         else if (price >= 20000) this.discountPrice = price * 80 / 100;
         else if (price >= 15000) this.discountPrice = price * 85 / 100;
+        else this.discountPrice = this.price;
     }
 
     //getter
