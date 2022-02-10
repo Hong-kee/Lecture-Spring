@@ -1,8 +1,6 @@
 package kosta.oop;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class PhoneBookManager {
 
@@ -50,6 +48,37 @@ public class PhoneBookManager {
                 System.out.println("전화번호 : " + phoneBook[i].getPhoneNumber());
                 System.out.println("생년월일 : " + phoneBook[i].getBirthDate());
                 break;
+            }
+        }
+    }
+
+    //이름을 찾아 전화번호를 업데이트 하는 메서드
+    public void updatePhoneInfo() throws IOException{
+        //이름 입력 => 해당 전화번호부 => 수정 전화번호 입력 받아 => 수정
+        System.out.print("이름을 입력하세요 : ");
+        String searchName = br.readLine();
+
+        for (int i = 0; i < index; i++) {
+            if (searchName.equals(phoneBook[i].getName())) {
+                System.out.print("수정 전화번호를 입력하세요 : ");
+                String updateNumber = br.readLine();
+                phoneBook[i].setPhoneNumber(updateNumber);
+                break;
+            }
+        }
+    }
+
+    //이름을 찾아 전화번호부 삭제하는 메서드
+    public void deletePhoneInfo() throws IOException{
+        System.out.print("삭제할 이름을 입력하세요 : ");
+        String deleteName = br.readLine();
+
+        for (int i = 0; i < index; i++) {
+            if (deleteName.equals(phoneBook[i].getName())) {
+                phoneBook[i] = null;
+                for (int j = i + 1; j < index; j++) phoneBook[i] = phoneBook[j];
+                System.out.println("삭제하였습니다.");
+                --index;
             }
         }
     }
