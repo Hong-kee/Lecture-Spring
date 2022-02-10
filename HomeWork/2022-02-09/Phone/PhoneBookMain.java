@@ -1,8 +1,6 @@
 package kosta.oop;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class PhoneBookMain {
 
@@ -11,16 +9,17 @@ public class PhoneBookMain {
 
     public static void main(String[] args) throws IOException {
 
-        //number == 4이면 프로그램 종료
         while (true) {
-            System.out.println("1 : 추가 / 2 : 전체 출력 / 3 : 검색 / 4 : 종료");
+            System.out.println("1 : 추가 / 2 : 전체 출력 / 3 : 검색 / 4 : 전화번호 수정 / 5 : 삭제 / 6 : 종료");
             int number = Integer.parseInt(br.readLine());
 
             switch (number) {
                 case 1 -> phoneBookManager.addInformation();
                 case 2 -> phoneBookManager.printAll();
                 case 3 -> phoneBookManager.searchPerson();
-                case 4 -> System.out.print("종료!");
+                case 4 -> phoneBookManager.updatePhoneInfo();
+                case 5 -> phoneBookManager.deletePhoneInfo();
+                case 6 -> System.out.print("종료!");
             }
         }
     }
