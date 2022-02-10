@@ -17,9 +17,7 @@ public class PhoneBook {
     }
 
     //getter
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -28,4 +26,6 @@ public class PhoneBook {
     public String getBirthDate() {
         return birthDate;
     }
+
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 }
