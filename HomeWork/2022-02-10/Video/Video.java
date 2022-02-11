@@ -15,7 +15,6 @@ public class Video {
         System.out.print("회원이 대여한 비디오 제목 : "); this.title = br.readLine();
         System.out.print("회원이 대여한 비디오 주인공 : "); this.mainActor = br.readLine();
         System.out.println();
-        br.close();
     }
 
     //getters
